@@ -1,0 +1,11 @@
+.search input{
+    background:purple;
+    padding: 5px;
+    margin: 5px;
+    color: white;
+    width: 80%;
+     
+ }
+ .search input::placeholder{
+   color:white ;
+ }
