@@ -15,7 +15,7 @@ import Topbar from "./components/topbar/Topbar";
 
 
 function App() {
-  console.log(process.env);
+  console
 
   return(
     <div>
