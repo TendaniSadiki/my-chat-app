@@ -1,0 +1,75 @@
+/*Mobile*/
+
+@media (max-width: 900px) {
+  .Navigation{
+    display: none;
+  }
+  .MobileTopBar{
+    display: flex;
+    background: rgb(100,212,221);
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-bottom: white 1px ridge;
+  }
+  .MobileTopBar .fa-bars{
+    position: absolute;
+    right: 5%;
+    padding: 8px;
+    cursor: pointer;
+    color: ;
+  }
+  .MobileTopBar .fa-times{
+    position: absolute;
+    right: 5%;
+    padding: 8px;
+    cursor: pointer;
+  }
+  .MobileTopBar .fa-bars:hover{
+    color: blueviolet;
+    background: white;
+  }
+  .MobileTopBar span i{
+    color: rgb(255, 254, 254);
+    font-size: 1.5rem;
+    padding: 8px;
+  }
+  .MobileTopBar span h4{
+    color: antiquewhite;
+    font-size:1rem
+  }
+  .MobileTopBar .linksContainer {
+    display: flex;
+    flex-direction: column;
+    top: 60px;
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    background: #181818;
+    width: 100%;
+  }
+}
+
+
+
+.Navigation{
+  width: 100%;
+  background: rgb(100,212,221);
+  height: 70px;
+  top: 0;
+  position: fixed;
+  left: 0;
+
+}
+.Navigation span i{
+  display: inline-block;
+  margin: 1.5vw;
+  color: white;
+  
+}
+.Navigation span i:hover{
+border-bottom: 5px solid rgb(7, 7, 7);
+}
