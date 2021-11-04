@@ -1,6 +1,8 @@
+import "./signin.css"
 import React, {useState ,useEffect} from 'react';
 import {BrowserRouter as Link} from 'react-router-dom';
-import {getAuth, signInWithEmailAndPassword} from 'firebase/auth'
+import {getAuth, signInWithEmailAndPassword} from 'firebase/auth';
+import { useAuth } from "../../context/authContext";
 
 export default function Login( history){
   const [email, setEmail] = useState('');
@@ -13,7 +15,7 @@ export default function Login( history){
     if(token){
       history.push('/home')
     }
-  },[history])
+  },[])
 
 
   const onLogin = () =>{
@@ -29,23 +31,31 @@ export default function Login( history){
     }
   
   return(
-    <div>
+    <div className='Mobile'>
       <br></br>
         <br></br>
         <br></br>
-      <Link to="/signup"><i className="" >
-        Sign In
+      <Link to="/signup"><i className="signUp" >
+        Sign Up
                 </i>
             </Link>
-      <form>
-        <input placeholder="email"  type="email" autoComplete="true" value={email} name="email"  
+      <form className="form-signinpage">
+        <input placeholder="email" class="form-control" type="email" autoComplete="true" value={email} name="email"  
           onChange={e => setEmail(e.target.value)}
           required/>
-        <input placeholder="password" type="password" autoComplete="true" value={password} name="password" 
+          <br></br>
+          <br></br>
+        <input placeholder="password" class="form-control" type="password" autoComplete="true" value={password} name="password" 
           onChange={e => setPassword(e.target.value)}
           required  />
-        <button onClick={onLogin} > { loading ? "Logging you in..." : "Login"}</button>
+        <button className="btn" onClick={onLogin} > { loading ? "Logging you in..." : "Login"}</button>
       </form>
+
+    
+      
+
+
+
     </div>
 );}
 

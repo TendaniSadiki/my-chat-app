@@ -1,14 +1,17 @@
 import {BrowserRouter as Link} from 'react-router-dom';
 import React, {useState} from 'react';
+import {useHistory} from 'react-router-dom';
 import {getAuth, createUserWithEmailAndPassword, updateProfile} from 'firebase/auth'
-export default function Signup(){
-  //const [user, setUser] = useState('');
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password,setPassword] = useState('');
-  const [loading, setLoading] = useState('');
 
-  const onSignup =(history) =>{
+export default function Signup(){
+
+  const history = useHistory();
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password,setPassword] = useState('')
+  const [loading, setLoading] = useState('')
+  
+  const onSignup =() =>{
     setLoading(true);
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)

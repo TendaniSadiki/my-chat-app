@@ -3,24 +3,21 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.auth = exports.db = void 0;
+exports.auth = void 0;
 
-var _firebase = _interopRequireDefault(require("firebase;"));
+var _app = require("@firebase/app");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+var _auth = require("@firebase/auth");
 
-var firebaseApp = _firebase["default"].intializeApp({
-  apiKey: "AIzaSyDPO4YCmW2je9EwzAoPlGANx7jrk9KfP-o",
-  authDomain: "chat-app-c002c.firebaseapp.com",
-  projectId: "chat-app-c002c",
-  storageBucket: "chat-app-c002c.appspot.com",
-  messagingSenderId: "575931725329",
-  appId: "1:575931725329:web:1f72aebbd8444f3313a3b0"
-});
-
-var db = firebaseApp.firestore();
-exports.db = db;
-
-var auth = _firebase["default"].auth();
-
+var firebaseConfig = {
+  apiKey: process.env.REACT_APP_APIKEY,
+  authDomain: process.env.REACT_APP_AUTHDOMAIN,
+  databaseURL: process.env.REACT_APP_REACT_APP_DATABASEURL,
+  projectId: process.env.REACT_APP_REACT_APP_PROJECTID,
+  storageBucket: process.env.REACT_APP_REACT_APP_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
+  appId: process.env.REACT_APP_APPID
+};
+var App = (0, _app.initializeApp)(firebaseConfig);
+var auth = (0, _auth.getAuth)(App);
 exports.auth = auth;
