@@ -24,7 +24,7 @@ function App() {
       <Topbar/>
 
         <Switch>
-        <Route path="/form" exact component={Form}>
+        <Route path="/" exact component={Form}>
             <Form/>
           </Route>
             <Route path="/home" exact component={Home}>
