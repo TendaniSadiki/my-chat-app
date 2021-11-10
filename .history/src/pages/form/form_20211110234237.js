@@ -1,7 +1,5 @@
 import React, {useState} from 'react'
 import Signup from './signup';
-import Personalinfo from './personal'
-import Location from './location'
 
 function Form() {
     const [page,setPage] = useState(0);
@@ -12,10 +10,7 @@ function Form() {
             return <Signup/>
         }
         else if (page === 1){
-            return <Personalinfo/>
-        }
-        else {
-            return <Location/>
+            return <perso
         }
     };
     return (
@@ -25,9 +20,6 @@ function Form() {
             <br></br>
            <div className="Header" >
            <h1>{FormTitles[page]}</h1> 
-           </div>
-           <div className="body">
-            {pageDisplay()}
            </div> 
            <div className="footer">
                <button disabled={page === 0} onClick={() =>{setPage((currPage)=>currPage - 1);}}  >Prev</button>

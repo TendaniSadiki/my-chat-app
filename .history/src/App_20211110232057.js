@@ -36,6 +36,7 @@ function App() {
           <Route path="/signin" exact component={Login}>
             <Login/>
           </Route>
+         
           <Route path="/search" exact component={Search}>
             <Search/>
           </Route>

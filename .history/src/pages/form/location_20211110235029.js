@@ -5,7 +5,7 @@ function Location() {
         <div>
             <h1>Location</h1>
             <form>
-          <input placeholder="Country" type="country" autoComplete="true"  name="name" 
+          <input placeholder="Cou" type="name" autoComplete="true"  name="name" 
          
           required />
           <input placeholder="email" type="email" autoComplete="true"  name="email"  

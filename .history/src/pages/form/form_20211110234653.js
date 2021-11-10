@@ -27,7 +27,7 @@ function Form() {
            <h1>{FormTitles[page]}</h1> 
            </div>
            <div className="body">
-            {pageDisplay()}
+            {pa}
            </div> 
            <div className="footer">
                <button disabled={page === 0} onClick={() =>{setPage((currPage)=>currPage - 1);}}  >Prev</button>

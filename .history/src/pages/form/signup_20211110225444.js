@@ -1,3 +1,5 @@
+import {BrowserRouter as Link} from 'react-router-dom';
+
 
 export default function Signup(){
 
@@ -8,7 +10,10 @@ export default function Signup(){
         <br></br>
         <br></br>
         <br></br>
-     
+      <Link to="/signin"><i className="fas fa-user" >
+        Signin
+                </i>
+            </Link>
         <form>
           <input placeholder="Username" type="name" autoComplete="true"  name="name" 
          
