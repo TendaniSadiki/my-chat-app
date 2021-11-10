@@ -1,8 +1,8 @@
 import "./style.css";
 import "./firebase"
 /*import React, {useState, useEffect} from 'react';*/
-import Login from "./pages/signin/signin";
-import Signup from "./pages/signup/signup";
+import Login from "./pages/form/signin";
+import Form from "./pages/form/form";
 import Home from "./pages/home/home";
 import Profile from './pages/profile/profile';
 import Search from './pages/search/search';
@@ -12,17 +12,21 @@ import Videocall from './pages/videocall/videocall';
 import Weather from './pages/weather/weather';
 import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
 import Topbar from "./components/topbar/Topbar";
-import AuthContextProvider from "./context/authContext";
+
+
 
 function App() {
 
   return(
-    <AuthContextProvider>
+    
     <div>
     <Router>
       <Topbar/>
 
         <Switch>
+        <Route path="/form" exact component={Form}>
+            <Form/>
+          </Route>
           <Route path="/" exact component={Home}>
             <Home/>
             </Route>
@@ -32,8 +36,8 @@ function App() {
           <Route path="/signin" exact component={Login}>
             <Login/>
           </Route>
-          <Route path="/signup" exact component={Signup}>
-            <Signup/>
+          <Route path="/form" exact component={Form}>
+            <Form/>
           </Route>
           <Route path="/search" exact component={Search}>
             <Search/>
@@ -57,7 +61,6 @@ function App() {
     </Router>
     
     </div>
-    </AuthContextProvider>
     );
   
 }
