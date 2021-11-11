@@ -1,0 +1,10 @@
+.progressbar{
+    
+    background: white;
+   
+}
+.progressbar div{
+    width: 33.3%;
+    height: 100%;
+    background-color: aqua;
+}
