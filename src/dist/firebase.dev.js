@@ -1,5 +1,10 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
 var _app = require("@firebase/app");
 
 var firebaseConfig = {
@@ -11,4 +16,7 @@ var firebaseConfig = {
   messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
   appId: process.env.REACT_APP_APPID
 };
-(0, _app.initializeApp)(firebaseConfig);
+
+var _default = (0, _app.initializeApp)(firebaseConfig);
+
+exports["default"] = _default;
