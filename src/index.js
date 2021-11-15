@@ -4,7 +4,7 @@ import App from './App';
 import {AuthContext} from './context/authContext'
 
 
-ReactDOM.render(
+export default ReactDOM.render(
   <React.StrictMode>
     <AuthContext>
     <App />

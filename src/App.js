@@ -1,7 +1,7 @@
 import "./style.css";
 
 import Login from "./pages/form/signin";
-import Form from "./pages/form/form";
+import Forms from "./pages/form/form";
 import Home from "./pages/home/home";
 import Profile from './pages/profile/profile';
 import Search from './pages/search/search';
@@ -27,8 +27,8 @@ const routing = (
       <Topbar/>
 
         <Switch>
-        <Route path="/form" exact component={Form}>
-            <Form/>
+        <Route path="/form" exact component={Forms}>
+            <Forms/>
           </Route>
             <Route path="/home" exact component={Home}>
             <Home/>

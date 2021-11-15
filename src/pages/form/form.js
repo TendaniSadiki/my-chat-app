@@ -3,9 +3,9 @@ import Signup from './signup';
 import './form.css';
 import Personalinfo from './personal';
 import Location from './location';
-import {AuthContext} from '../context/authContext';
+import {AuthContext} from '../../context/authContext';
 
-function Form() {
+function Forms() {
  
 
     const [page,setPage] = useState(0);
@@ -56,8 +56,6 @@ function Form() {
             <br></br>
             <br></br>
         <div className="form">
-            <button>Sign In</button>
-            
             <div className="formContainer">
             <br></br>
             <div className="progressbar"><div style={{width: page ===0 ? "33.3%" : page === 1 ? "66.6%" : "100%"}} ></div></div>
@@ -83,4 +81,4 @@ function Form() {
     )
 }
 
-export default Form;
+export default Forms;
