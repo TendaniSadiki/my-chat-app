@@ -1,5 +1,5 @@
 import "./style.css";
-import { useState } from "react";
+
 import Login from "./pages/form/signin";
 import Form from "./pages/form/form";
 import Home from "./pages/home/home";
@@ -12,16 +12,17 @@ import Weather from './pages/weather/weather';
 import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
 import Topbar from "./components/topbar/Topbar";
 import {AuthContext} from './context/authContext';
+import Auth from "./components/Auth/auth";
 
 /*App */
 function App() {
-const  {loading, error, user} = AuthContext();
-const [user] = useState(true)
+const  {loading, error, currentUser} = AuthContext();
+
 const routing = (
 
     <div>
       {error && <p className="error" ></p>}
-      {loading ? <h2>Loading...</h2> ? <>{user ? <Home/> : <Auth/> }</>}
+      {loading ? <h2>Loading...</h2> : <>{currentUser ? <Home/> : <Auth/> }</> }
     <Router>
       <Topbar/>
 

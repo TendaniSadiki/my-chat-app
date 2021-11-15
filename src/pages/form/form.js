@@ -1,8 +1,9 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 import Signup from './signup';
-import './form.css'
-import Personalinfo from './personal'
-import Location from './location'
+import './form.css';
+import Personalinfo from './personal';
+import Location from './location';
+import {AuthContext} from '../context/authContext';
 
 function Form() {
  
@@ -15,15 +16,29 @@ function Form() {
         email:'',
         password:'',
         username:'',
-        firstnane:'',
+        firstname:'',
         surname:'',
         country:'',
         city:'',
         town:'',
 
     });
-   
-
+   const {registerUser} = AuthContext;
+   const onSubmit = (e) =>{
+       e.preventDefault();
+       const email = formData.email;
+       const password = formData.password;
+       const username = formData.username;
+       const firstname = formData.firstname;
+       const surname = formData.surname;
+       const country= formData.country;
+       const city = formData.city;
+       const town = formData.town;
+       if(email && password && username && firstname && surname && country && city && town)registerUser(
+        email, password, username, firstname, surname, country, city, town
+       )
+   };
+    
     const pageDisplay = () =>{
         if ( page === 0){
             return <Signup formData={formData} setFormData={setFormData} />
@@ -54,7 +69,7 @@ function Form() {
            </div> 
            <br></br>
            <div className="footer">
-               <button disabled={page === 0} onClick={() =>{setPage((currPage)=>currPage - 1);}} className="formBtn" >Prev</button>
+               <button disabled={page === 0} onSubmit={onSubmit()} onClick={() =>{setPage((currPage)=>currPage - 1);}} className="formBtn" >Prev</button>
                <button  onClick={() =>{
                     if (page === FormTitles.length -1){
                             console.log(formData)

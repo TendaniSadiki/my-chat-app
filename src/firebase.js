@@ -11,4 +11,4 @@ import {getAuth} from 'firebase/auth';
   appId: process.env.REACT_APP_APPID
 };
 const App = initializeApp(firebaseConfig)
-export const auth =getAuth(App)
+export const Auth =getAuth(App)

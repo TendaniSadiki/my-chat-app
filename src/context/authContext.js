@@ -24,10 +24,11 @@ useEffect(() =>{
 return unsubscribe
 }, [])
 
-const registerUser=(email,
+const registerUser=(
+email,
 password,
 username,
-firstnane,
+firstname,
 surname,
 country,
 city,
@@ -36,7 +37,11 @@ setLoading(true)
 createUserWithEmailAndPassword(auth, email, password).then(() =>{
     return updateProfile(auth.currentUser, {
         displayName: username,
-
+        displayFirstName: firstname, 
+        displaySurname :surname,
+        displayCountry :country,
+        displayCity :city,
+        displayTown :town,  
     })
     
 }).then(res  => console.log(res))
